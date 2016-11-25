@@ -2,18 +2,16 @@ import ftplib
 import os
 import socket
 
-HOST = 'ftp.mozilla.org'
+HOST = 'ftp.debian.org'
 Path = 'pub/mozilla.org/webtools'
 File = 'bugzilla-LATEST.tar.gz'
 
 
 def main():
-    try:
-        ftp = ftplib.FTP(HOST)
-    except (socket.error, socket.gaierror) as e:
-        print('can\'t reach %s' % HOST)
-        print(e)
+    print('start')
+    ftp = ftplib.FTP(HOST)
     print('arrived')
+
     try:
         ftp.login()
     except:
