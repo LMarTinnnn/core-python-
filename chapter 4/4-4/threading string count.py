@@ -11,7 +11,7 @@ def single_thread_main(filename, string_to_count):
 class multi_thread_main(object):
     def __init__(self, filename, string_to_count, thread_num):
         self.filename = filename
-        self. string_to_count = string_to_count
+        self.string_to_count = string_to_count
         self.all_count = 0
         self.thread_list = []
         self.thread_num = thread_num
@@ -40,7 +40,7 @@ class multi_thread_main(object):
         parts = self.split(length, data)
 
         for part in parts:
-            t = threading.Thread(target=self.count, args=(string_to_count, part))
+            t = threading.Thread(target=self.count, args=(self.string_to_count, part))
             self.thread_list.append(t)
 
         for t in self.thread_list:
@@ -52,24 +52,25 @@ class multi_thread_main(object):
         return self.all_count
 
 
-filename = '280.txt'
-string_to_count = input('你要查什么: ')
-print(single_thread_main(filename, string_to_count))
-str_func = 'single_thread_main(%s, %s)' % (filename, string_to_count)
-print('单线程总用时: ' + str(timeit.timeit('str_func', globals=globals())))
+if __name__ == '__main__':
+    filename = '280.txt'
+    string_to_count = input('你要查什么: ')
+    print(single_thread_main(filename, string_to_count))
+    str_func = 'single_thread_main(%s, %s)' % (filename, string_to_count)
+    print('单线程总用时: ' + str(timeit.timeit('str_func', globals=globals())))
 
-time_dic = {}
-for i in range(2, 10):
-    str_func2 = 'multi_thread_main(%s, %s, %s).run()' % (filename, string_to_count, i)
-    time_dic[i] = timeit.timeit('str_func2', globals=globals())
+    time_dic = {}
+    for i in range(2, 10):
+        str_func2 = 'multi_thread_main(%s, %s, %s).run()' % (filename, string_to_count, i)
+        time_dic[i] = timeit.timeit('str_func2', globals=globals())
 
 
-least_id = 2
-t_min = 1
+    least_id = 2
+    t_min = 1
 
-for t_id, time in time_dic.items():
-    if time < t_min:
-        least_id = t_id
-        t_min = time
+    for t_id, time in time_dic.items():
+        if time < t_min:
+            least_id = t_id
+            t_min = time
 
-print(least_id, time_dic[least_id])
+    print(least_id, time_dic[least_id])

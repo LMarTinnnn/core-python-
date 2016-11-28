@@ -4,7 +4,10 @@
       <w>bugzilla</w>
       <w>recv</w>
       <w>remaddr</w>
+      <w>rlock</w>
       <w>sina</w>
+      <w>tconsumer</w>
+      <w>tproducer</w>
       <w>webtools</w>
     </words>
   </dictionary>
