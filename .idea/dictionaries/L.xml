@@ -2,6 +2,7 @@
   <dictionary name="L">
     <words>
       <w>bugzilla</w>
+      <w>readlines</w>
       <w>recv</w>
       <w>remaddr</w>
       <w>rlock</w>
