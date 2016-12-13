@@ -1,0 +1,8 @@
+
+*.iml
+
+*.xml
+
+.DS_Store
+
+*.pyc

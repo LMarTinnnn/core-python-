@@ -68,6 +68,6 @@ class ChatServer(object):
             self.srv.close()
 
 if __name__ == '__main__':
-    c1 = ChatServer(1034)
+    c1 = ChatServer(6666)
     c1.run()
 

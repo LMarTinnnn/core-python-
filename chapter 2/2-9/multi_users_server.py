@@ -3,7 +3,7 @@ import select
 import sys
 
 
-def create_server(*, host='', port=9979):
+def create_server(*, host='', port=8000):
 
     def broadcast(sock_send_msg, sock_list, msg_in):
         for s in sock_list:
