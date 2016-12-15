@@ -7,11 +7,12 @@ import cgi
 from http.cookies import SimpleCookie
 
 import template5
-from sql import sql_helper
+from sql import user_sql
 
 
 header = 'Content-Type: text/html\r\n\r\n'
 url = '/cgi-bin/log.py'
+hour = 60 * 60
 
 
 def valid_email(email):
@@ -31,9 +32,9 @@ def valid_name(name):
 def set_cookies(username, key):
     c = SimpleCookie()
     c['username'] = username
-    c['username']['max-age'] = 60
+    c['username']['max-age'] = 4 * hour
     c['key'] = key
-    c['key']['max-age'] = 60
+    c['key']['max-age'] = 4 * hour
     print(c)
 
 
@@ -98,7 +99,7 @@ def sign_out():
 
 def go():
     form = cgi.FieldStorage()
-    db = sql_helper.DataBase()
+    db = user_sql.DataBase()
     action = form.getvalue('action', False)
     username, key = get_cookies()
 

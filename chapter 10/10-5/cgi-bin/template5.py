@@ -23,7 +23,7 @@ sign_up_temp = '''<!DOCTYPE html>
     <h1>Sign UP</h1>
     <form action="%s" method="post">
       <p>Enter your username: <input type="text" name="name" size="25"
-        placeholder="Username">  Tips: Less than 15 characters</p>
+        placeholder="Username">  .Tips: Less than 15 characters</p>
       <p>Enter your email: <input type="text" name="email" size="25"
         placeholder="***@**.**"></p>
       <p>Enter your password: <input type="password" name="password" size="25"
