@@ -5,7 +5,7 @@ from http.server import HTTPServer, CGIHTTPRequestHandler
 
 
 def main():
-    srv = HTTPServer(('', 8000), CGIHTTPRequestHandler)
+    srv = HTTPServer(('0.0.0.0', 8000), CGIHTTPRequestHandler)
     print('Press ^c to stop the server machine.')
     try:
         srv.serve_forever()

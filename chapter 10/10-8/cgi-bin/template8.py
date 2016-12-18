@@ -94,7 +94,7 @@ error_temp = '''<!DOCTYPE html>
     <form>
     <input type="button" value="Back" onclick="window.history.back()">
     </form>
-    <a href='/cgi-bin/tel.py'>回到首页</a>
+    <a href='/cgi-bin/tel19.py'>回到首页</a>
   </body>
 </html>
 '''
@@ -134,7 +134,7 @@ form_temp = '''<!DOCTYPE html>
       <p>Enter tel number: <input type="text" name="tel" placeholder="电话"></p>
       <p>Enter address: <input type="text" name="address" placeholder="住址"></p>
       <input type="submit" name="add" value="Submit">
-      <a href='/cgi-bin/tel.py'>回到首页</a>
+      <a href='/cgi-bin/tel19.py'>回到首页</a>
     </form>
   </body>
 </html>
